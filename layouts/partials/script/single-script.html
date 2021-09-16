@@ -428,7 +428,7 @@
       {{ $themeVariant := (index .Site.Params.themeOptions 0) }}
       var themeVariant = localStorage.getItem('theme') || JSON.parse({{ $themeVariant | jsonify }});
 
-      if (themeVariant === "dark" || themeVariant === "hacker") {
+      if (themeVariant === "dark" || themeVariant === "hacker" || themeVariant === "darker") {
         mermaid.initialize({ theme: 'dark' });
       } else {
         mermaid.initialize({ theme: 'default' });

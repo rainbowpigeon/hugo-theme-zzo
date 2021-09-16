@@ -103,6 +103,9 @@ other = "TOP POSTS"
 [skin-dark]
 other = "dark"
 
+[skin-darker]
+other = "darker"
+
 [skin-light]
 other = "light"
 

@@ -202,6 +202,88 @@
   }
 }
 
+.theme__darker {
+  @if $theme_darker_chroma == default {
+    @include chroma-monokai;
+  } @else if $theme_darker_chroma == abap {
+    @include chroma-abap;
+  } @else if $theme_darker_chroma == algol {
+    @include chroma-algol;
+  } @else if $theme_darker_chroma == algolnu {
+    @include chroma-algolnu;
+  } @else if $theme_darker_chroma == api {
+    @include chroma-api;
+  } @else if $theme_darker_chroma == arduino {
+    @include chroma-arduino;
+  } @else if $theme_darker_chroma == autumn {
+    @include chroma-autumn;
+  } @else if $theme_darker_chroma == borland {
+    @include chroma-borland;
+  } @else if $theme_darker_chroma == bw {
+    @include chroma-bw;
+  } @else if $theme_darker_chroma == colorful {
+    @include chroma-colorful;
+  } @else if $theme_darker_chroma == dracula {
+    @include chroma-dracula;
+  } @else if $theme_darker_chroma == emacs {
+    @include chroma-emacs;
+  } @else if $theme_darker_chroma == friendly {
+    @include chroma-friendly;
+  } @else if $theme_darker_chroma == fruity {
+    @include chroma-fruity;
+  } @else if $theme_darker_chroma == github {
+    @include chroma-github;
+  } @else if $theme_darker_chroma == igor {
+    @include chroma-igor;
+  } @else if $theme_darker_chroma == lovelace {
+    @include chroma-lovelace;
+  } @else if $theme_darker_chroma == manni {
+    @include chroma-manni;
+  } @else if $theme_darker_chroma == monokai {
+    @include chroma-monokai;
+  } @else if $theme_darker_chroma == monokailight {
+    @include chroma-monokailight;
+  } @else if $theme_darker_chroma == murphy {
+    @include chroma-murphy;
+  } @else if $theme_darker_chroma == native {
+    @include chroma-native;
+  } @else if $theme_darker_chroma == paraisodark {
+    @include chroma-paraisodark;
+  } @else if $theme_darker_chroma == paraisolight {
+    @include chroma-paraisolight;
+  } @else if $theme_darker_chroma == pastie {
+    @include chroma-pastie;
+  } @else if $theme_darker_chroma == perldoc {
+    @include chroma-perldoc;
+  } @else if $theme_darker_chroma == pygments {
+    @include chroma-pygments;
+  } @else if $theme_darker_chroma == rainbowdash {
+    @include chroma-rainbowdash;
+  } @else if $theme_darker_chroma == rrt {
+    @include chroma-rrt;
+  } @else if $theme_darker_chroma == solarizeddark {
+    @include chroma-solarizeddark;
+  } @else if $theme_darker_chroma == solarizeddark256 {
+    @include chroma-solarizeddark256;
+  } @else if $theme_darker_chroma == solarizedlight {
+    @include chroma-solarizedlight;
+  } @else if $theme_darker_chroma == swapoff {
+    @include chroma-swapoff;
+  } @else if $theme_darker_chroma == tango {
+    @include chroma-tango;
+  } @else if $theme_darker_chroma == trac {
+    @include chroma-trac;
+  } @else if $theme_darker_chroma == vim {
+    @include chroma-vim;
+  } @else if $theme_darker_chroma == vs {
+    @include chroma-vs;
+  } @else if $theme_darker_chroma == xcode {
+    @include chroma-xcode;
+  } @else {
+    @include chroma-monokai;
+  }
+}
+
 .theme__hacker {
   @if $theme_hacker_chroma == default {
     @include chroma-dracula;

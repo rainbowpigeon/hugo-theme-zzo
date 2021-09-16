@@ -522,6 +522,8 @@
     
     {{ $skinDarkCode := (i18n "skin-dark") }}
     var skinDarkCode = JSON.parse({{ $skinDarkCode | jsonify }});
+    {{ $skinDarkerCode := (i18n "skin-darker") }}
+    var skinDarkerCode = JSON.parse({{ $skinDarkerCode | jsonify }});
     {{ $skinLightCode := (i18n "skin-light") }}
     var skinLightCode = JSON.parse({{ $skinLightCode | jsonify }});
     {{ $skinHackerCode := (i18n "skin-hacker") }}
@@ -538,6 +540,11 @@
       var metaAppleMobileWebAappStatusBarStyle = document.getElementsByName('apple-mobile-web-app-status-bar-style')[0];
 
       if (themeColor.includes('dark')) {
+        metaMsapplicationTileColor.setAttribute('content', '#fcfcfa');
+        metaThemeColor.setAttribute('content', '#403E41');
+        metaMsapplicationNavbuttonColor.setAttribute('content', '#403E41');
+        metaAppleMobileWebAappStatusBarStyle.setAttribute('content', '#403E41');
+      } else if (themeColor.includes('darker')) {
         metaMsapplicationTileColor.setAttribute('content', '#fcfcfa');
         metaThemeColor.setAttribute('content', '#403E41');
         metaMsapplicationNavbuttonColor.setAttribute('content', '#403E41');
@@ -568,6 +575,8 @@
     var parseSkinCode = function(themeText) {
       if (themeText === skinDarkCode) {
         return 'dark';
+      } else if (themeText === skinDarkerCode) {
+        return 'darker';
       } else if (themeText === skinLightCode) {
         return 'light';
       } else if (themeText === skinHackerCode) {
@@ -620,7 +629,7 @@
         });
 
         if (window.mermaid) {
-          if (selectedThemeVariant === "dark" || selectedThemeVariant === "hacker") {
+          if (selectedThemeVariant === "dark" || selectedThemeVariant === "hacker" || selectedThemeVariant === "darker") {
             mermaid.initialize({ theme: 'dark' });
             location.reload();
           } else {
@@ -633,7 +642,7 @@
         if (utterances) {
           utterances.querySelector('iframe').contentWindow.postMessage({
             type: 'set-theme',
-            theme: selectedThemeVariant === "dark" || selectedThemeVariant === "hacker" ? 'photon-dark' : selectedThemeVariant === 'kimbie' ? 'github-dark-orange' : 'github-light',
+            theme: selectedThemeVariant === "dark" || selectedThemeVariant === "darker" || selectedThemeVariant === "hacker" ? 'photon-dark' : selectedThemeVariant === 'kimbie' ? 'github-dark-orange' : 'github-light',
           }, 'https://utteranc.es');
         }
 
@@ -701,6 +710,7 @@
               distance: searchDistance ? searchDistance : 100, // default: 100
               maxPatternLength: 32,
               minMatchCharLength: 1,
+              ignoreLocation: true, // ADDITION
               isCaseSensitive: false, // defualt: false
               findAllMatches: false, // default: false
               useExtendedSearch: false, // default: false
@@ -919,8 +929,8 @@
       if (results.length > 0) {
         results.forEach(function (result) {
           var item = document.createElement('a');
-          item.setAttribute('href', result.uri);
-          item.innerHTML = '<div class="mobile-search__item"><div class="mobile-search__item--title">📄 ' + result.title + '</div><div class="mobile-search__item--desc">' + (result.description ? result.description : result.content) + '</div></div>';
+          item.setAttribute('href', result.item.uri);
+          item.innerHTML = '<div class="mobile-search__item"><div class="mobile-search__item--title">📄 ' + result.item.title + '</div><div class="mobile-search__item--desc">' + (result.item.description ? result.item.description : result.item.content) + '</div></div>';
           content.appendChild(item);
         });
       } else {

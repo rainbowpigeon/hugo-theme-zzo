@@ -1,4 +1,5 @@
 @import 'dark';
+@import 'darker';
 @import 'light';
 @import 'hacker';
 @import 'solarized';
@@ -12,6 +13,7 @@
 
 $themes: (
   dark: $dark,
+  darker: $darker,
   light: $light,
   hacker: $hacker,  
   solarized: $solarized,
@@ -20,6 +22,7 @@ $themes: (
 
 $codeblock: (
   dark: $darkcode,
+  darker: $darkcode,
   light: $lightcode,
   hacker: $hackercode,  
   solarized: $solarizedcode,
