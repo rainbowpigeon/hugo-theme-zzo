@@ -52,9 +52,9 @@
   {{ end }}
 {{ end }}
 {{ hugo.Generator }}
-<meta name="msapplication-TileColor" content="{{ $.Scratch.Get "themeTitleColor" | default "#fff" }}">
+<!-- <meta name="msapplication-TileColor" content="{{ $.Scratch.Get "themeTitleColor" | default "#fff" }}"> -->
 <!-- Chrome, Firefox OS and Opera -->
-<meta name="theme-color" content="{{ $.Scratch.Get "themeNavbarColor" | default "#fff" }}">
+<!-- <meta name="theme-color" content="{{ $.Scratch.Get "themeNavbarColor" | default "#fff" }}"> -->
 <!-- Windows Phone -->
 <meta name="msapplication-navbutton-color" content="{{ $.Scratch.Get "themeNavbarColor" | default "#fff" }}">
 <!-- iOS Safari -->
@@ -82,6 +82,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL }}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+{{ else if $.Site.Params.useRealFavIconGenerator }}
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4">
+  <link rel="manifest" href="/site.webmanifest?v=4">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=4" color="#00aba9">
+  <link rel="shortcut icon" href="/favicon.ico?v=4">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=4">
+  <meta name="theme-color" content="#565656">
 {{ else }}
   {{ if (fileExists "static/apple-touch-icon.png") -}}
   <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
