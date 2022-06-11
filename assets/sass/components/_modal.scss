@@ -38,7 +38,7 @@
     bottom: 0;
     left: 50%;
     width: 100%;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.67); // AAA accessbility
 
     @include no-select;
     @include translateX(-50%);

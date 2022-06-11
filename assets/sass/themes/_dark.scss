@@ -88,7 +88,8 @@ $dark: (
     archive-key-background-color: #FF6188,
     archive-type-background-color: #424242,
     archive-hover-line-color: #FF6188,
-    gtt-color: #bdbdbd,
+    // gtt-color: #bdbdbd,
+    gtt-color: #FFFFFF, // affects .modal__caption
     gtt-background-color: #403E41,
     gtt-hover-color: #82aaff,
     gtt-hover-background-color: lighten(#403E41, 5%),
